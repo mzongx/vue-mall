@@ -1,0 +1,201 @@
+.md-modal
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 535px;
+  height: auto;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  z-index: 201;
+  &.md-modal-m
+    width: 620px;
+  .md-content
+    .login-wrap
+      margin-top:30px;
+      .btn-login
+        display: block;
+        height: 38px;
+        line-height: 38px;
+        border: 2px solid #009de6;
+        background: #009de6;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+        &:hover
+            background: #61b1ef;
+            border: 2px solid #61b1ef;
+  .md-close
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 34px;
+    height: 34px;
+    transform: scale(0.5);
+    text-indent: -8000px;
+    &::before,&::after
+      position: absolute;
+      top: 16px;
+      left: -4px;
+      content: "";
+      width: 44px;
+      height: 3px;
+      background: #d7d8dd;
+      transition: transform .5s ease-out;
+    &::before
+      transform: rotate(-45deg);
+    &::after
+      transform: rotate(45deg);
+    &:hover:before,&:hover:after
+      transition: transform .3s ease-out;
+    &:hover:before
+      transform: rotate(-135deg);
+    &:hover:after
+      transform: rotate(-45deg);
+  .md-title
+    position: absolute;
+    top: 14px;
+    line-height: 24px;
+    padding: 8px 0;
+    color: #333;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+  .md-modal-inner
+    padding: 60px 50px;
+  .btn-wrap
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0;
+    .btn
+      width: 45%;
+      min-width: 80px;
+      margin: 0 2.5%;
+      &.cancel
+        border-color: $color-text-gray;
+        color: $color-text-gray;
+  .confirm-tips,.alert-tips
+    font-size: 14px;
+    font-weight: 200;
+    text-align: center;
+    p
+      line-height: 1.8em;
+  .confirm-tips
+    min-height: 5.65em;
+    .error-wrap
+      .error
+        font-size: 12px;
+        color: #d31723;
+        visibility: hidden;
+        display: block;
+        padding: 0 0 7px 17px;
+        line-height: 16px;
+        height: 16px;
+        text-align: left;
+        background: url("../../common/images/icon.png") 0 -100px no-repeat;
+      .error-show
+        visibility: visible;
+        height: auto;
+    .regi_form_input
+      position: relative;
+      height: 42px;
+      line-height: 42px;
+      background: none;
+      margin-bottom: 15px;
+      font-size: 14px;
+      overflow: hidden;
+      border:1px solid #ccc;
+      padding-bottom: 0;
+      .icon
+        display: inline-block;
+        float: left;
+        width: 25px;
+        height: 29px;
+        margin: 6px 0 0 14px;
+        background-position: 4px 5px;
+        background-image: url("../../common/images/icon.png");
+        background-repeat: no-repeat;
+      .IconPwd
+        background-position: -198px 3px;
+      .regi_login_input
+        position: absolute;
+        left:45px;
+        top:0;
+        padding: 9px 0 10px;
+        width: 270px;
+        font-size: 14px;
+        zoom: 1;
+        border: none;
+        color: #333;
+        line-height: 23px;
+        background: 0 0!important;
+  .alert-tips
+    display: flex;
+    height: 10.25em;
+    align-items: center;
+    p
+      flex: 1;
+  &.modal-normal
+    .content-tit
+      margin-bottom: 20px;
+      line-height: 20px;
+      font-size: 16px;
+      color: #333;
+  .icon-status-ok
+    width: 20px;
+    height: 20px;
+    fill: #ee7a23;
+    vertical-align: middle;
+    margin-right: 15px;
+.md-overlay
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+
+.md-modal-transition
+  .md-modal-inner
+    background: #fff;
+    transform: translateY(20%);
+    opacity: 0;
+    transition: all .3s ease-out;
+.md-modal-transition.md-show
+  visibility: visible;
+  .md-modal-inner
+    transform: translateY(0);
+    opacity: 1;
+    transition: all .5s ease-out;
+@media only screen and (max-width: 767px)
+  .md-modal
+    width: 300px !important;
+  .md-modal.md-modal-fun .md-content
+    padding-top: 30px;
+  .md-modal .md-close
+    display: none;
+  .md-modal .md-title
+    padding: 0 15px;
+  .md-modal .md-modal-inner
+    padding: 0 !important;
+  .md-modal .confirm-tips, .md-modal .alert-tips
+    padding: 30px 10px;
+  .md-modal .confirm-tips
+    display: flex;
+    min-height: 90px;
+    align-items: center;
+  .md-modal .confirm-tips p
+    flex: 1;
+  .md-modal .btn-wrap
+    display: flex;
+    margin-top: 0;
+  .md-modal .btn-wrap .btn
+    flex: 1;
+    width: 100%;
+    margin: 0;
+    font-size: 12px;
+  .md-modal .btn-wrap .btn:first-child
+    border-left: none;
+    border-right: none;
+  .md-modal.modal-normal .content-tit
+    font-size: 12px;

@@ -1,20 +1,27 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <app-header></app-header>
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
+    <app-footer></app-footer>
   </div>
 </template>
+<script type="text/ecmascript-6">
+import AppHeader from '@/components/app-header/app-header'
+import AppFooter from '@/components/app-footer/app-footer'
+export default {
+  data () {
+    return {
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+    }
+  },
+  components: {
+    AppHeader,
+    AppFooter
+  }
 }
+</script>
+<style lang="stylus">
+
 </style>
